@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Layout from "../components/layout/Layout";
@@ -24,9 +24,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-
         <Route element={<Layout />}>
-
           <Route path="/" element={<Home />} />
 
           <Route path="/nosotros" element={<About />} />
@@ -44,18 +42,22 @@ function AnimatedRoutes() {
 
           <Route path="/blog" element={<Blog />} />
 
-          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route
+            path="/blog/:slug"
+            element={<BlogPost />}
+          />
 
           <Route path="/eventos" element={<Events />} />
 
-          <Route path="/donaciones" element={<Donations />} />
+          <Route
+            path="/donaciones"
+            element={<Donations />}
+          />
 
           <Route path="/contacto" element={<Contact />} />
 
           <Route path="/faq" element={<Faq />} />
-
         </Route>
-
       </Routes>
     </AnimatePresence>
   );
@@ -63,13 +65,10 @@ function AnimatedRoutes() {
 
 function AppRouter() {
   return (
-    <BrowserRouter basename="/fundacion-vida-dulce">
-
-  <ScrollToTop />
-
-  <AnimatedRoutes />
-
-</BrowserRouter>
+    <HashRouter>
+      <ScrollToTop />
+      <AnimatedRoutes />
+    </HashRouter>
   );
 }
 
