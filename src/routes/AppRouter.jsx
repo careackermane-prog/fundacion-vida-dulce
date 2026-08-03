@@ -63,13 +63,13 @@ function AnimatedRoutes() {
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/fundacion-vida-dulce">
 
-      <ScrollToTop />
+  <ScrollToTop />
 
-      <AnimatedRoutes />
+  <AnimatedRoutes />
 
-    </BrowserRouter>
+</BrowserRouter>
   );
 }
 
